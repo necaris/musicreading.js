@@ -1,0 +1,42 @@
+body {
+    background-color: #DDF;
+    padding: 10px;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+hr.score_line {
+    height: 2px; width: 95%;
+    position: fixed; left: 24px;
+    color: #000; background-color: #000;
+}
+
+img.note {
+    position: fixed; height: 120px; width: 40px;
+    z-index: 15;
+}
+
+input.btn_note {
+    padding: 3px 10px;
+    font-weight: bold;
+}
+
+#score {
+    background-color: #F0F0FF;
+}
+
+#clef_box {
+    float: left;
+    height: 240px; width: 180px;
+    position: fixed;
+    z-index: 10;
+}
+
+#clef_img {
+    vertical-align: center;
+    margin-top: 60px; margin-left: 16px;
+    height: 120px; width: 90px;
+}
+
+#score_box {
+    height: 248px;
+}

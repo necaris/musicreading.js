@@ -1,35 +1,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml11/DTD/xhtml1transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!-- See LICENSE for copyright and terms and conditions. -->
+<!--
+
+See LICENSE for copyright and terms and conditions.
+
+This application is pure HTML, CSS, and Javascript, and should work on any
+modern browser (tested on Firefox, Google Chrome, Konqueror, and Safari).
+
+This is based in concept on an extremely useful piece of software
+(http://scret.sourceforge.net) that is, unfortunately, only really available
+to those who are happy to install alternative graphics toolkits (or run
+Linux-based OSes). And I wanted to be able to practice without booting
+into Linux.
+
+I've made it available on the net in the hope that someone else finds
+it useful. I would love to improve it - feedback, feature requests, and
+bug reports of all sorts welcome! (rami at necaris _dot_ net)
+
+-->
 <head>
   <title> Musical Score Reading Trainer </title>
-  <style type="text/css">
-
-    body { background-color: #DDF; padding: 10px; font-family: Verdana, Arial, sans-serif; }
-
-    hr.score_line { height: 2px; width: 95%; position: fixed; left: 24px;
-        color: #000; background-color: #000; }
-
-    img.note { position: fixed; height: 120px; width: 40px; z-index: 15; }
-
-    input.btn_note { padding: 3px 10px; font-weight: bold; }
-
-    #score { background-color: #F0F0FF; }
-    #clef_box { float: left; height: 240px; width: 180px; position: fixed; z-index: 10; }
-    #clef_img { vertical-align: center; margin-top: 60px; margin-left: 16px; height: 120px; width: 90px; }
-    #score_box { height: 248px; }
-
-  </style>
-
+  <link rel="stylesheet" type="text/css" href="main.css"/>
   <script type="text/javascript" src="scoretrainer.js">  </script>
-
 </head>
 <body>
 
 <div id="score">
     <div id="clef_box">
-        <img src="bass_clef.png" id="clef_img" align="center" />
+        <img src="bass_clef.png" id="clef_img" align="center" alt="clef"/>
     </div>
     <div id="score_box">
         <hr class="score_line" style="top: 70px;" />
@@ -65,16 +64,25 @@
 </div>
 
 <div id="instructions">
-    <p> Welcome to the Score Reading Trainer! It's dirt-simple to use -- choose to work in either treble or bass clef, and then simply identify the notes (either by clicking on the buttons or pressing the corresponding letter on your keyboard) as they parade across the screen. Currently, this application is pure HTML, CSS, and Javascript, and should work on any modern browser (tested on Firefox, Google Chrome, Konqueror, and Safari). </p>
 
-    <p> This is based in concept on an <a href="http://scret.sourceforge.net/">extremely useful piece of software</a> that is, unfortunately, only really available to those who are happy to install alternative graphics toolkits (or run Linux-based OSes). And I wanted to be able to practice without booting into Linux. </p>
+    <p> Welcome to the Score Reading Trainer! It's dirt-simple to use -- choose
+    to work in either treble or bass clef, and then simply identify the notes
+    (either by clicking on the buttons or pressing the corresponding letter on
+    your keyboard) as they parade across the screen. </p>
 
-    <p> I've made it available on the net in the hope that someone else finds it useful. I would love to improve it -- <a href="rami at necaris -dot- net">feedback, feature requests, and bug reports of all sorts welcome</a>! </p>
+    <p><small>See the source code notes if you're really interested.</small></p>
+
 </div>
 
-<script>
-    var config = {'note_count': 16, 'clef': 'treb', 'mountpoint': '/scorereading/', 'note_distance': 60 };
+<script type="text/javascript">
+    var config = {
+      note_count: 16,
+      clef: 'treb',
+      mountpoint: './',
+      note_distance: 60
+    };
     var trainer = new ScoreTrainer(config);
+    trainer.init();
 </script>
 
 </body>
